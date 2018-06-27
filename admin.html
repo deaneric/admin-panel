@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"/>
+  <link href="fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="style/admin-style.css"/>
+  
+  <script src="script/admin-script.js"></script> 
+  
+  <script>
+  <!-----GRAPH script---->
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	
+	axisX: {
+		valueFormatString: "DDD",
+		minimum: new Date(2017, 1, 5, 23),
+		maximum: new Date(2017, 1, 12, 1)
+	},
+	axisY: {
+		
+	},
+	legend: {
+		verticalAlign: "top",
+		horizontalAlign: "right",
+		dockInsidePlotArea: true
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [{
+		name: "Received",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(40,175,101,0.6)",
+		markerSize: 0,
+		dataPoints: [
+			{ x: new Date(2017, 1, 6), y: 220 },
+			{ x: new Date(2017, 1, 7), y: 120 },
+			{ x: new Date(2017, 1, 8), y: 144 },
+			{ x: new Date(2017, 1, 9), y: 162 },
+			{ x: new Date(2017, 1, 10), y: 129 },
+			{ x: new Date(2017, 1, 11), y: 109 },
+			{ x: new Date(2017, 1, 12), y: 129 }
+		]
+	},
+	{
+		name: "Sent",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(0,75,141,0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ x: new Date(2017, 1, 6), y: 42 },
+			{ x: new Date(2017, 1, 7), y: 34 },
+			{ x: new Date(2017, 1, 8), y: 29 },
+			{ x: new Date(2017, 1, 9), y: 42 },
+			{ x: new Date(2017, 1, 10), y: 53},
+			{ x: new Date(2017, 1, 11), y: 15 },
+			{ x: new Date(2017, 1, 12), y: 12 }
+		]
+	}]
+});
+chart.render();
+}
+</script>
+  
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row shadow">
+	<div class="col p-0">
+	<!---Top Navigation Section--->
+	<nav class="navbar navbar-expand-md bg-light fixed-top align-middle">
+	  <a class="navbar-brand" href="#">
+	   <i class="fas fa-bars" id="sidemenu_btn"></i><h3 class="d-inline-block text-secondary">PROMACT</h3>
+	  </a>
+	  <form class="form-inline shadow-sm search-form">
+	    <input class="form-control border-0 rounded-0 search-bar" type="search" 
+		 placeholder="Search dashboard..." aria-label="Search"/>
+		 <button class="btn btn-primary border-0 rounded-0" type="submit">Go</button>
+	  </form>
+	  <!---Top Navigation Links--->
+	  <ul class="navbar-nav ml-md-auto">
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbar_notifications" 
+		 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-bell"></i>
+        </a>        
+		<ul class="dropdown-menu notifications text-center" aria-labelledby="navbar_notifications">
+			<li><a href="#" class="dropdown-items"><span class="dot bg-warning"></span>System space is almost full</a></li>
+		    <li><a href="#" class="dropdown-items"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
+			<li><a href="#" class="dropdown-items"><span class="dot bg-success"></span>Monthly report is available</a></li>
+			<li><a href="#" class="font-weight-bold">See all notifications</a></li>
+		</ul>
+      </li>
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbar_help" 
+		 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-question-circle mr-1"></i>Help
+        </a>        
+		<ul class="dropdown-menu notifications" aria-labelledby="navbar_help">
+			<li><a href="#" class="dropdown-items">Basic Use</a></li>
+		    <li><a href="#" class="dropdown-items">Working With Data</a></li>
+			<li><a href="#" class="dropdown-items">Security</a></li>
+			<li><a href="#" class="dropdown-items">Troubleshooting</a></li>
+		</ul>
+      </li>
+	  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbar_help" 
+		 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <img src="images/dean-s13.jpg" class="img-circle rounded-circle" alt="Avatar"> <span>Dean Winchester</span>
+        </a>        
+		<ul class="dropdown-menu notifications" aria-labelledby="navbar_help">
+			<li><a href="#" class="dropdown-items mx-2"><i class="far fa-user mr-2"></i><span>My Profile</span></a></li>
+			<li><a href="#" class="dropdown-items mx-2"><i class="far fa-envelope mr-2"></i><span>Message</span></a></li>
+			<li><a href="#" class="dropdown-items mx-2"><i class="fas fa-cog mr-2"></i></i> <span>Settings</span></a></li>
+			<li><a href="#" class="dropdown-items mx-2"><i class="fas fa-sign-out-alt mr-2"></i><span>Logout</span></a></li>
+		</ul>
+      </li>
+	</ul>	  
+    </nav>
+	</div>
+	</div>
+	<!---sidebar--->
+    <div class="sidebar bg-dark" id="sidebar_menu">
+	  <ul class="list-group list-group-flush">
+        <li class="list-group-item dashboard-sidebar active-sidebar">
+		 <a href="#" id="dashboard" value="dashboard"><i class="fas fa-home mr-2"></i><span>Dashboard</span></a>
+		</li>
+        <li class="list-group-item elements-sidebar">
+		 <a href="#"><i class="fas fa-code mr-2"></i><span>Elements</span></a>
+		</li>
+        <li class="list-group-item charts-sidebar">
+		 <a href="#"><i class="far fa-chart-bar mr-2"></i><span>Charts</span></a>
+		</li>
+        <li class="list-group-item notifications-sidebar">
+		 <a href="#"><i class="far fa-bell mr-2"></i><span>Notifications</span></a>
+		</li>
+		<li class="list-group-item pages-sidebar">
+		 <a href="#"><i class="far fa-file mr-2"></i><span>Pages</span></a>
+		</li>
+        <li class="list-group-item tables-sidebar">
+		 <a href="#" id="tables" value="tables"><i class="fas fa-table mr-2"></i><span>Tables</span></a>
+		</li>
+        <li class="list-group-item typography-sidebar">
+		 <a href="#"><i class="fab fa-typo3 mr-2"></i><span>Typography</span></a>
+		</li>
+        <li class="list-group-item icons-sidebar">
+		 <a href="#"><i class="far fa-gem mr-2"></i><span>Icons</span></a>
+		</li>
+      </ul>
+    </div>	
+	<!--sidebar ends----------->
+
+	<!--main body---------->
+	<div class="row panel">
+	  <div class="col-xs-12 col-md-9 offset-md-3" id="main_body_container">
+	  <!-- Weekly Overview Card-->
+	    <div class="row weekly-overview mb-4 mr-lg-5">
+		 <div class="col">
+		   <div class="card">
+		      <div class="card-body">
+                <h4 class="card-title">Weekly Overview</h4>
+				<p class="p-duration text-secondary">Period: Oct 14, 2016 - Oct 21, 2016</p>
+				<div class="row mb-4">
+				  <div class="col-xs-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+				  <div class="weekly-info border border-info">
+				    <span class="icon float-left rounded-circle text-center"><i class="fas fa-download text-white"></i></span>
+					<p><span class="value">1,252</span><span class="value-title">Downloads</span></p>
+				  </div>
+				  </div>
+				  <div class="col-xs-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+				  <div class="weekly-info border border-info">
+				    <span class="icon float-left rounded-circle text-center"><i class="fas fa-piggy-bank text-white"></i></span>
+					<p><span class="value">203</span><span class="value-title">Sales</span></p>
+				  </div>
+				  </div>
+				  <div class="col-xs-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+				  <div class="weekly-info border border-info">
+				    <span class="icon float-left rounded-circle text-center"><i class="fas fa-eye text-white"></i></span>
+					<p><span class="value">274,678</span><span class="value-title">Visits</span></p>
+				  </div>
+				  </div>
+				  <div class="col-xs-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+				  <div class="weekly-info border border-info">
+				    <span class="icon float-left rounded-circle text-center"><i class="far fa-chart-bar text-white"></i></span>
+					<p><span class="value">35%</span><span class="value-title">Conversions</span></p>
+				  </div>
+				  </div>
+				</div>
+				
+				<div class="row">
+				  <div class="col-xs-12 col-lg-9 mb-3 mb-lg-0">
+				    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+					<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>                   
+				  </div>
+				  <div class="col-xs-12 col-lg-3">
+				  <div class="row">
+				    <div class="week-total col-xs-12 col-md-6 col-lg-12 text-right mb-3">
+					  <span class="amount">2,315</span>
+					  <span class="percent"><i class="fa fa-caret-up text-success"></i> 12%</span>
+					  <span class="title">Total Sales</span>
+					</div>
+					<div class="week-total col-xs-12 col-md-6 col-lg-12 text-right mb-3">
+					  <span class="amount">$5,758</span>
+					  <span class="percent"><i class="fa fa-caret-up text-success"></i> 23%</span>
+					  <span class="title">Monthly Income</span>
+					</div>
+					<div class="week-total col-xs-12 offset-md-6 offset-lg-0 col-md-6 col-lg-12 text-right mb-3">
+					  <span class="amount">$65,938</span>
+					  <span class="percent"><i class="fa fa-caret-down text-danger"></i> 8%</span>
+					  <span class="title">Total Income</span>
+					</div>	
+                  </div>					
+				  </div>
+				</div>   
+              </div>
+		   </div>
+		 </div>
+		</div>
+		<!-- Weekly Overview Card Ends-->
+		
+		<!-- Table Overview Card-->
+		<div class="row table-data mb-4 mr-lg-5">
+		 <div class="col">
+		   <div class="card">
+		      <div class="card-body">
+			    <h4 class="card-title">Table</h4>
+				<div class="table-responsive">
+				  <table class="table" id="new_employee_table">
+				  <thead class="thead-dark">
+				    <tr>
+					  <th>ID</th>
+					  <th>First Name</th>
+					  <th>Last Name</th>
+					  <th>Designation</th>
+					</tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+                      <th scope="row">1</th>
+                      <td>Eric</td>
+                      <td>Dean</td>
+                      <td>Web Designer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">2</th>
+                      <td>Sohesh</td>
+                      <td>Doshi</td>
+                      <td>Python Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">3</th>
+                      <td>Twinkal</td>
+                      <td>Parmar</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">4</th>
+                      <td>Ruchi</td>
+                      <td>Maurya</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">5</th>
+                      <td>Mansi</td>
+                      <td>Patel</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">6</th>
+                      <td>Dasrhan</td>
+                      <td>Lathiya</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">7</th>
+                      <td>Aerika</td>
+                      <td>Kapadia</td>
+                      <td>Python Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">8</th>
+                      <td>Meet</td>
+                      <td>Vora</td>
+                      <td>UX Desiginer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">9</th>
+                      <td>Haiku</td>
+                      <td>Thakkar</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">10</th>
+                      <td>Prutha</td>
+                      <td>Shnakpal</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">11</th>
+                      <td>Sudip</td>
+                      <td>Sadhukhan</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">12</th>
+                      <td>Adwitiya</td>
+                      <td>Xyz</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">13</th>
+                      <td>Debojyoti</td>
+                      <td>xyz</td>
+                      <td>Software Developer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">14</th>
+                      <td>Firoja</td>
+                      <td>xyz</td>
+                      <td>Web Designer</td>
+                    </tr>
+					<tr>
+                      <th scope="row">15</th>
+                      <td>Sreyash</td>
+                      <td>Agarval</td>
+                      <td>Software Developer</td>
+                    </tr>
+				  </tbody>					
+				  </table>
+				  <div class="col" id="page-link-order">
+				  </div>
+				</div>
+			  </div>
+		   </div>
+		 </div>
+		</div> 
+		<!-- Table Overview Card Ends-->
+	  
+	    
+	  </div>
+	</div>
+	
+	<!---------main body ends------->
+	
+	  
+  </div>
+</body>
+</html>
