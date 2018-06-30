@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Slabo 27px', serif; }
+
+/****Top Navbar style****/
+.navbar-brand {
+  width: 100%;
+  text-align: center; }
+
+#sidemenu_btn {
+  float: left;
+  padding-top: 0.4rem; }
+
+.search-form {
+  width: 90%;
+  margin: auto; }
+  .search-form .search-bar {
+    width: calc(100% - 41.8px) !important; }
+
+.navbar-nav {
+  flex-direction: row;
+  width: 90%;
+  margin: auto; }
+  .navbar-nav .dropdown-menu {
+    position: absolute; }
+  .navbar-nav .nav-item.dropdown {
+    margin: auto; }
+
+.notifications {
+  min-width: 200px; }
+  .notifications .dropdown-items {
+    font-size: 0.8rem; }
+
+.notification-item .dot {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  content: '';
+  margin-right: 8px; }
+
+.notifications li {
+  padding: 10px; }
+  .notifications li::not(:last-child) {
+    border-bottom: 1px solid #F0F0F0; }
+
+.img-circle {
+  width: 30px;
+  margin-right: 2px; }
+
+/****************/
+/*** SideBar*****/
+.sidebar {
+  position: fixed;
+  width: 0;
+  /*250px*/
+  height: 100%;
+  margin-left: -1rem;
+  padding-top: 9rem;
+  /*4rem*/
+  overflow-y: auto;
+  transition: 0.5s; }
+  .sidebar .list-group-item {
+    padding: 1rem 2rem;
+    background-color: transparent; }
+    .sidebar .list-group-item a {
+      text-decoration: none;
+      color: white; }
+    .sidebar .list-group-item:hover a {
+      color: silver; }
+
+.active-sidebar {
+  background-color: #84828278 !important; }
+
+/*******************/
+/****contanier body***/
+#main_body_container {
+  transition: 0.5s; }
+
+/**********/
+/***Week Overview Card***/
+.weekly-overview {
+  padding-top: 165px; }
+
+.weekly-info {
+  border-radius: 3px;
+  padding: 20px; }
+  .weekly-info .icon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #0081c2; }
+  .weekly-info p {
+    margin-bottom: 0;
+    line-height: 1.2;
+    text-align: right; }
+  .weekly-info .value {
+    display: block;
+    font-size: 28px;
+    font-weight: 300;
+    font-family: initial; }
+  .weekly-info .value-title {
+    font-size: 16px; }
+
+.week-total-info {
+  font-weight: 300; }
+
+.week-total .amount {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  font-family: initial; }
+
+.week-total .percent {
+  font-family: initial; }
+
+.week-total .title {
+  display: block; }
+
+/***********************/
+/****table panel********/
+.table-data {
+  padding-top: 90px;
+  display: none; }
+
+/***********************/
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  /***main body row styling**********/
+  .weekly-overview {
+    padding-top: 160px; }
+  /********************/ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  /*****navbar style******/
+  #sidemenu_btn {
+    display: none; }
+  .navbar-brand {
+    width: 150px;
+    text-align: center; }
+  .search-form {
+    width: 25%; }
+  .navbar-nav {
+    width: inherit;
+    margin: inherit; }
+  /********************/
+  /****sideBar style********/
+  .sidebar {
+    display: block;
+    width: 200px;
+    padding-top: 4rem; }
+  /********************/
+  .weekly-overview {
+    padding-top: 90px; } }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  /******navbar style*****/
+  .navbar-brand {
+    width: 220px; }
+  .search-form {
+    width: 20%;
+    margin: inherit; }
+  /********************/
+  /****sideBar style********/
+  .sidebar {
+    width: 250px; } }
+
+/* Extra large devices (large desktops, 1200px and up)*/
